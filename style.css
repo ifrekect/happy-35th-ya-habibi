@@ -10,37 +10,71 @@
 
 body {
   min-height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   background:
-    radial-gradient(circle at 20% 20%, rgba(207, 170, 92, 0.20), transparent 30%),
-    radial-gradient(circle at 80% 30%, rgba(140, 90, 170, 0.18), transparent 30%),
-    linear-gradient(135deg, #07111f, #10182b, #1b1830);
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(207, 170, 92, 0.20),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(140, 90, 170, 0.18),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #07111f,
+      #10182b,
+      #1b1830
+    );
 
   color: #fff;
-overflow-x: hidden;
-overflow-y: auto;
+
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-/* Main screen */
+
+/* ------------------------------
+   Main Screen
+------------------------------ */
 
 .welcome-screen {
   min-height: 100vh;
+
   display: flex;
+
   justify-content: center;
   align-items: flex-start;
+
   padding: 50px 30px;
+
   position: relative;
 }
 
-/* Floating background decorations */
+
+/* ------------------------------
+   Floating Background Decorations
+------------------------------ */
 
 .welcome-screen::before,
 .welcome-screen::after {
   content: "✨";
+
   position: absolute;
+
   font-size: 40px;
+
   opacity: 0.5;
-  animation: floatAround 6s ease-in-out infinite;
+
+  animation:
+    floatAround 6s ease-in-out infinite;
 }
 
 .welcome-screen::before {
@@ -50,221 +84,239 @@ overflow-y: auto;
 
 .welcome-screen::after {
   content: "💫";
+
   bottom: 12%;
   right: 10%;
+
   animation-delay: 2s;
 }
 
-/* Birthday card */
+
+/* ------------------------------
+   Birthday Card
+------------------------------ */
 
 .birthday-card {
   width: min(700px, 95%);
+
   text-align: center;
 
   padding: 60px 45px;
 
-  background: rgba(9, 17, 32, 0.82);
+  background:
+    rgba(9, 17, 32, 0.82);
+
   backdrop-filter: blur(14px);
 
-  border: 1px solid rgba(232, 195, 112, 0.45);
+  border:
+    1px solid
+    rgba(232, 195, 112, 0.45);
+
   border-radius: 28px;
 
   box-shadow:
     0 0 40px rgba(0, 0, 0, 0.45),
     0 0 40px rgba(208, 168, 88, 0.10);
 
-  animation: fadeUp 1.2s ease;
+  animation:
+    fadeUp 1.2s ease;
 }
 
-/* Small introduction */
+
+/* ------------------------------
+   Small Intro Text
+------------------------------ */
 
 .small-text {
   text-transform: uppercase;
+
   letter-spacing: 4px;
+
   color: #e6c77d;
+
   font-size: 0.8rem;
+
   margin-bottom: 18px;
 }
 
-/* Main heading */
+
+/* ------------------------------
+   Main Heading
+------------------------------ */
 
 h1 {
-  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-size:
+    clamp(2.4rem, 6vw, 4.5rem);
+
   line-height: 1.05;
+
   margin-bottom: 18px;
+
   color: #ffffff;
 }
 
 .gradient-text {
-  background: linear-gradient(
-    90deg,
-    #f5df9c,
-    #ffffff,
-    #e9bf65
-  );
+  background:
+    linear-gradient(
+      90deg,
+      #f5df9c,
+      #ffffff,
+      #e9bf65
+    );
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
   background-clip: text;
 }
 
 .emoji {
   display: inline-block;
+
   background: none;
+
   color: initial;
+
   -webkit-text-fill-color: initial;
 }
 
-/* 35 Years Young */
+
+/* ------------------------------
+   35 Years Young
+------------------------------ */
 
 h2 {
   font-size: 1.4rem;
+
   color: #e8ca83;
+
   margin-bottom: 30px;
+
   letter-spacing: 2px;
 }
 
-/* Main birthday message */
+
+/* ------------------------------
+   Main Birthday Message
+------------------------------ */
 
 .message {
   max-width: 530px;
+
   margin: 0 auto 18px;
 
   line-height: 1.8;
+
   font-size: 1.05rem;
+
   color: #e9e9ef;
 }
 
-/* Cute line */
+
+/* ------------------------------
+   Cute Message
+------------------------------ */
 
 .funny-message {
   margin-bottom: 35px;
+
   font-size: 1.05rem;
+
   color: #f4d5dc;
+
   font-weight: bold;
 }
 
-/* Birthday button */
+
+/* ------------------------------
+   Start Button
+------------------------------ */
 
 #startButton {
   border: none;
+
   padding: 17px 30px;
 
   border-radius: 50px;
 
   font-size: 1rem;
+
   font-weight: bold;
 
   color: #09111f;
 
-  background: linear-gradient(
-    135deg,
-    #f4d889,
-    #ffffff,
-    #dbb25c
-  );
+  background:
+    linear-gradient(
+      135deg,
+      #f4d889,
+      #ffffff,
+      #dbb25c
+    );
 
   cursor: pointer;
 
   box-shadow:
-    0 8px 25px rgba(224, 182, 89, 0.25);
+    0 8px 25px
+    rgba(224, 182, 89, 0.25);
 
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
 }
 
-/* Button hover */
-
 #startButton:hover {
-  transform: translateY(-4px) scale(1.03);
+  transform:
+    translateY(-4px)
+    scale(1.03);
 
   box-shadow:
-    0 12px 35px rgba(224, 182, 89, 0.40);
+    0 12px 35px
+    rgba(224, 182, 89, 0.40);
 }
-
-/* Button click */
 
 #startButton:active {
   transform: scale(0.98);
 }
 
-/* Animations */
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(35px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes floatAround {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-25px) rotate(10deg);
-  }
-}
-
-/* Phone sizing */
-
-@media (max-width: 600px) {
-
-  .birthday-card {
-    padding: 45px 25px;
-  }
-
-  .small-text {
-    letter-spacing: 2px;
-  }
-
-  .message {
-    font-size: 0.95rem;
-  }
-
-  #startButton {
-    width: 100%;
-  }
-}
 
 /* ------------------------------
-   Birthday Choice Buttons
+   Choice Buttons
 ------------------------------ */
 
 .choice-button {
   display: block;
+
   width: min(480px, 100%);
+
   margin: 16px auto;
 
-  border: 1px solid rgba(232, 195, 112, 0.55);
+  border:
+    1px solid
+    rgba(232, 195, 112, 0.55);
+
   border-radius: 50px;
 
   padding: 17px 28px;
 
   font-size: 1rem;
+
   font-weight: bold;
 
   color: #09111f;
 
-  background: linear-gradient(
-    135deg,
-    #f4d889,
-    #ffffff,
-    #dbb25c
-  );
+  background:
+    linear-gradient(
+      135deg,
+      #f4d889,
+      #ffffff,
+      #dbb25c
+    );
 
   cursor: pointer;
 
   box-shadow:
-    0 8px 25px rgba(224, 182, 89, 0.20);
+    0 8px 25px
+    rgba(224, 182, 89, 0.20);
 
   transition:
     transform 0.25s ease,
@@ -272,57 +324,60 @@ h2 {
 }
 
 .choice-button:hover {
-  transform: translateY(-4px) scale(1.02);
+  transform:
+    translateY(-4px)
+    scale(1.02);
 
   box-shadow:
-    0 12px 35px rgba(224, 182, 89, 0.40);
+    0 12px 35px
+    rgba(224, 182, 89, 0.40);
 }
 
 .choice-button:active {
   transform: scale(0.98);
 }
 
+.choice-button.selected {
+  border:
+    3px solid #fff1b8;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(232, 195, 112, 0.30),
+    0 12px 35px
+    rgba(224, 182, 89, 0.45);
+
+  transform: scale(1.02);
+}
+
+
+/* ------------------------------
+   Date Input
+------------------------------ */
+
 .date-input {
   width: min(350px, 100%);
+
   padding: 15px 18px;
+
   margin: 10px auto 5px;
 
   display: block;
 
   border-radius: 15px;
-  border: 1px solid rgba(232, 195, 112, 0.55);
 
-  background: rgba(255, 255, 255, 0.95);
+  border:
+    1px solid
+    rgba(232, 195, 112, 0.55);
+
+  background:
+    rgba(255, 255, 255, 0.95);
+
   color: #09111f;
 
   font-size: 1rem;
+
   text-align: center;
-}
-
-/* ------------------------------
-   Normal Emoji Colors
------------------------------- */
-
-.emoji {
-  -webkit-text-fill-color: initial;
-  color: initial;
-  background: none;
-  display: inline-block;
-}
-
-
-/* ------------------------------
-   Selected Choice
------------------------------- */
-
-.choice-button.selected {
-  border: 3px solid #fff1b8;
-
-  box-shadow:
-    0 0 0 3px rgba(232, 195, 112, 0.30),
-    0 12px 35px rgba(224, 182, 89, 0.45);
-
-  transform: scale(1.02);
 }
 
 
@@ -333,9 +388,12 @@ h2 {
 .back-button {
   display: block;
 
-  margin: 0 0 25px 0;
+  margin:
+    0 0 25px 0;
 
-  border: 1px solid rgba(232, 195, 112, 0.45);
+  border:
+    1px solid
+    rgba(232, 195, 112, 0.45);
 
   border-radius: 50px;
 
@@ -343,7 +401,8 @@ h2 {
 
   color: #e8ca83;
 
-  background: rgba(255, 255, 255, 0.05);
+  background:
+    rgba(255, 255, 255, 0.05);
 
   font-weight: bold;
 
@@ -355,8 +414,11 @@ h2 {
 }
 
 .back-button:hover {
-  background: rgba(232, 195, 112, 0.12);
-  transform: translateX(-3px);
+  background:
+    rgba(232, 195, 112, 0.12);
+
+  transform:
+    translateX(-3px);
 }
 
 
@@ -370,24 +432,28 @@ h2 {
   padding: 17px 28px;
 
   border: none;
+
   border-radius: 50px;
 
   font-size: 1rem;
+
   font-weight: bold;
 
   color: #09111f;
 
-  background: linear-gradient(
-    135deg,
-    #f4d889,
-    #ffffff,
-    #dbb25c
-  );
+  background:
+    linear-gradient(
+      135deg,
+      #f4d889,
+      #ffffff,
+      #dbb25c
+    );
 
   cursor: pointer;
 
   box-shadow:
-    0 8px 25px rgba(224, 182, 89, 0.25);
+    0 8px 25px
+    rgba(224, 182, 89, 0.25);
 
   transition:
     transform 0.25s ease,
@@ -395,10 +461,13 @@ h2 {
 }
 
 .continue-button:hover {
-  transform: translateY(-4px) scale(1.02);
+  transform:
+    translateY(-4px)
+    scale(1.02);
 
   box-shadow:
-    0 12px 35px rgba(224, 182, 89, 0.40);
+    0 12px 35px
+    rgba(224, 182, 89, 0.40);
 }
 
 
@@ -414,4 +483,74 @@ h2 {
   margin-bottom: 18px;
 
   line-height: 1.6;
+}
+
+
+/* ------------------------------
+   Animations
+------------------------------ */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+@keyframes floatAround {
+  0%,
+  100% {
+    transform:
+      translateY(0px)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-25px)
+      rotate(10deg);
+  }
+}
+
+
+/* ------------------------------
+   Phone Sizing
+------------------------------ */
+
+@media (max-width: 600px) {
+
+  .welcome-screen {
+    padding:
+      30px 15px;
+  }
+
+  .birthday-card {
+    padding:
+      40px 22px;
+  }
+
+  .small-text {
+    letter-spacing: 2px;
+  }
+
+  .message {
+    font-size: 0.95rem;
+  }
+
+  #startButton {
+    width: 100%;
+  }
+
+  .back-button {
+    margin-bottom: 20px;
+  }
 }
