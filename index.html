@@ -79,7 +79,44 @@
   </main>
 
 
+  <!-- Main birthday planner -->
+
   <script src="script.js?v=20"></script>
+
+
+  <!-- Sends final choices to Formspree -->
+
+  <script src="email.js?v=2"></script>
+
+
+  <!--
+    Every time someone starts from the welcome screen,
+    begin with a completely fresh birthday plan.
+  -->
+
+  <script>
+
+    document
+      .getElementById("startButton")
+      .addEventListener(
+        "click",
+        function () {
+
+          birthdayPlan.celebrationLength = "";
+          birthdayPlan.dates = "";
+          birthdayPlan.restaurants = [];
+          birthdayPlan.activities = [];
+          birthdayPlan.gifts = [];
+          birthdayPlan.giftNotes = "";
+
+          savePlan();
+
+        },
+        true
+      );
+
+  </script>
+
 
 </body>
 
