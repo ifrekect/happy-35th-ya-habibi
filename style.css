@@ -17,7 +17,8 @@ body {
     linear-gradient(135deg, #07111f, #10182b, #1b1830);
 
   color: #fff;
-  overflow: hidden;
+overflow-x: hidden;
+overflow-y: auto;
 }
 
 /* Main screen */
@@ -26,8 +27,8 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 30px;
+  align-items: flex-start;
+  padding: 50px 30px;
   position: relative;
 }
 
@@ -91,7 +92,10 @@ h1 {
   font-size: clamp(2.4rem, 6vw, 4.5rem);
   line-height: 1.05;
   margin-bottom: 18px;
+  color: #ffffff;
+}
 
+.gradient-text {
   background: linear-gradient(
     90deg,
     #f5df9c,
@@ -101,8 +105,14 @@ h1 {
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
   background-clip: text;
+}
+
+.emoji {
+  display: inline-block;
+  background: none;
+  color: initial;
+  -webkit-text-fill-color: initial;
 }
 
 /* 35 Years Young */
