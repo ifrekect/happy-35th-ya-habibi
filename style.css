@@ -271,3 +271,20 @@ h2 {
 .choice-button:active {
   transform: scale(0.98);
 }
+
+.date-input {
+  width: min(350px, 100%);
+  padding: 15px 18px;
+  margin: 10px auto 5px;
+
+  display: block;
+
+  border-radius: 15px;
+  border: 1px solid rgba(232, 195, 112, 0.55);
+
+  background: rgba(255, 255, 255, 0.95);
+  color: #09111f;
+
+  font-size: 1rem;
+  text-align: center;
+}
