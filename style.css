@@ -1,6 +1,6 @@
-/* ------------------------------
-   Birthday App - Main Styling
------------------------------- */
+/* =====================================
+   BASIC PAGE SETUP
+===================================== */
 
 * {
   margin: 0;
@@ -34,16 +34,16 @@ body {
       #1b1830
     );
 
-  color: #fff;
+  color: white;
 
   overflow-x: hidden;
   overflow-y: auto;
 }
 
 
-/* ------------------------------
-   Main Screen
------------------------------- */
+/* =====================================
+   MAIN SCREEN
+===================================== */
 
 .welcome-screen {
   min-height: 100vh;
@@ -59,52 +59,58 @@ body {
 }
 
 
-/* ------------------------------
-   Floating Background Decorations
------------------------------- */
+/* Floating decorations */
 
 .welcome-screen::before,
 .welcome-screen::after {
-  content: "✨";
 
-  position: absolute;
+  position: fixed;
+
+  z-index: -1;
 
   font-size: 40px;
 
-  opacity: 0.5;
+  opacity: 0.50;
 
   animation:
-    floatAround 6s ease-in-out infinite;
+    floatAround 6s
+    ease-in-out
+    infinite;
 }
 
+
 .welcome-screen::before {
+  content: "✨";
+
   top: 12%;
-  left: 10%;
+  left: 2%;
 }
+
 
 .welcome-screen::after {
   content: "💫";
 
-  bottom: 12%;
-  right: 10%;
+  bottom: 10%;
+  right: 2%;
 
   animation-delay: 2s;
 }
 
 
-/* ------------------------------
-   Birthday Card
------------------------------- */
+/* =====================================
+   MAIN CARD
+===================================== */
 
 .birthday-card {
-  width: min(700px, 95%);
 
-  text-align: center;
+  width: min(700px, 95%);
 
   padding: 60px 45px;
 
+  text-align: center;
+
   background:
-    rgba(9, 17, 32, 0.82);
+    rgba(9, 17, 32, 0.88);
 
   backdrop-filter: blur(14px);
 
@@ -115,47 +121,57 @@ body {
   border-radius: 28px;
 
   box-shadow:
-    0 0 40px rgba(0, 0, 0, 0.45),
-    0 0 40px rgba(208, 168, 88, 0.10);
+    0 0 40px
+    rgba(0, 0, 0, 0.45),
+
+    0 0 40px
+    rgba(208, 168, 88, 0.10);
 
   animation:
-    fadeUp 1.2s ease;
+    fadeUp 0.8s ease;
 }
 
 
-/* ------------------------------
-   Small Intro Text
------------------------------- */
+.wide-card {
+
+  width: min(900px, 96%);
+
+}
+
+
+/* =====================================
+   TEXT
+===================================== */
 
 .small-text {
+
   text-transform: uppercase;
 
   letter-spacing: 4px;
 
   color: #e6c77d;
 
-  font-size: 0.8rem;
+  font-size: 0.80rem;
 
   margin-bottom: 18px;
 }
 
 
-/* ------------------------------
-   Main Heading
------------------------------- */
-
 h1 {
+
   font-size:
-    clamp(2.4rem, 6vw, 4.5rem);
+    clamp(2.3rem, 6vw, 4.5rem);
 
   line-height: 1.05;
 
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 
-  color: #ffffff;
+  color: white;
 }
 
+
 .gradient-text {
+
   background:
     linear-gradient(
       90deg,
@@ -165,27 +181,29 @@ h1 {
     );
 
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
+  -webkit-text-fill-color:
+    transparent;
 
   background-clip: text;
 }
 
-.emoji {
-  display: inline-block;
 
-  background: none;
+.emoji {
+
+  display: inline-block;
 
   color: initial;
 
-  -webkit-text-fill-color: initial;
+  background: none;
+
+  -webkit-text-fill-color:
+    initial;
 }
 
 
-/* ------------------------------
-   35 Years Young
------------------------------- */
-
 h2 {
+
   font-size: 1.4rem;
 
   color: #e8ca83;
@@ -196,14 +214,23 @@ h2 {
 }
 
 
-/* ------------------------------
-   Main Birthday Message
------------------------------- */
+h3 {
+
+  color: #f4d889;
+
+  margin:
+    35px 0 15px;
+
+  font-size: 1.25rem;
+}
+
 
 .message {
-  max-width: 530px;
 
-  margin: 0 auto 18px;
+  max-width: 620px;
+
+  margin:
+    0 auto 20px;
 
   line-height: 1.8;
 
@@ -213,12 +240,9 @@ h2 {
 }
 
 
-/* ------------------------------
-   Cute Message
------------------------------- */
-
 .funny-message {
-  margin-bottom: 35px;
+
+  margin-bottom: 30px;
 
   font-size: 1.05rem;
 
@@ -228,16 +252,44 @@ h2 {
 }
 
 
-/* ------------------------------
-   Start Button
------------------------------- */
+.saved-choice {
 
-#startButton {
+  color: #e8ca83;
+
+  font-weight: bold;
+
+  margin:
+    22px 0;
+
+  line-height: 1.6;
+}
+
+
+.selection-counter {
+
+  color: #f4d889;
+
+  font-weight: bold;
+
+  margin:
+    15px 0 25px;
+}
+
+
+/* =====================================
+   MAIN BUTTONS
+===================================== */
+
+#startButton,
+.choice-button,
+.continue-button {
+
   border: none;
 
-  padding: 17px 30px;
-
   border-radius: 50px;
+
+  padding:
+    17px 30px;
 
   font-size: 1rem;
 
@@ -264,66 +316,11 @@ h2 {
     box-shadow 0.25s ease;
 }
 
-#startButton:hover {
-  transform:
-    translateY(-4px)
-    scale(1.03);
 
-  box-shadow:
-    0 12px 35px
-    rgba(224, 182, 89, 0.40);
-}
+#startButton:hover,
+.choice-button:hover,
+.continue-button:hover {
 
-#startButton:active {
-  transform: scale(0.98);
-}
-
-
-/* ------------------------------
-   Choice Buttons
------------------------------- */
-
-.choice-button {
-  display: block;
-
-  width: min(480px, 100%);
-
-  margin: 16px auto;
-
-  border:
-    1px solid
-    rgba(232, 195, 112, 0.55);
-
-  border-radius: 50px;
-
-  padding: 17px 28px;
-
-  font-size: 1rem;
-
-  font-weight: bold;
-
-  color: #09111f;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f4d889,
-      #ffffff,
-      #dbb25c
-    );
-
-  cursor: pointer;
-
-  box-shadow:
-    0 8px 25px
-    rgba(224, 182, 89, 0.20);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.choice-button:hover {
   transform:
     translateY(-4px)
     scale(1.02);
@@ -333,45 +330,107 @@ h2 {
     rgba(224, 182, 89, 0.40);
 }
 
-.choice-button:active {
-  transform: scale(0.98);
+
+.choice-button {
+
+  display: block;
+
+  width:
+    min(500px, 100%);
+
+  margin:
+    16px auto;
 }
 
+
 .choice-button.selected {
+
   border:
     3px solid #fff1b8;
 
   box-shadow:
     0 0 0 3px
     rgba(232, 195, 112, 0.30),
+
     0 12px 35px
     rgba(224, 182, 89, 0.45);
-
-  transform: scale(1.02);
 }
 
 
-/* ------------------------------
-   Date Input
------------------------------- */
+.continue-button {
 
-.date-input {
-  width: min(350px, 100%);
+  width:
+    min(500px, 100%);
 
-  padding: 15px 18px;
+  margin-top: 10px;
+}
 
-  margin: 10px auto 5px;
+
+/* =====================================
+   BACK BUTTON
+===================================== */
+
+.back-button {
 
   display: block;
+
+  margin-bottom: 25px;
+
+  padding:
+    10px 18px;
+
+  border:
+    1px solid
+    rgba(232,195,112,0.45);
+
+  border-radius: 50px;
+
+  background:
+    rgba(255,255,255,0.05);
+
+  color: #e8ca83;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+
+.back-button:hover {
+
+  background:
+    rgba(232,195,112,0.12);
+
+  transform:
+    translateX(-3px);
+}
+
+
+/* =====================================
+   DATE
+===================================== */
+
+.date-input {
+
+  display: block;
+
+  width:
+    min(350px, 100%);
+
+  margin:
+    15px auto;
+
+  padding:
+    15px 18px;
 
   border-radius: 15px;
 
   border:
     1px solid
-    rgba(232, 195, 112, 0.55);
+    rgba(232,195,112,0.55);
 
   background:
-    rgba(255, 255, 255, 0.95);
+    rgba(255,255,255,0.95);
 
   color: #09111f;
 
@@ -381,189 +440,34 @@ h2 {
 }
 
 
-/* ------------------------------
-   Back Button
------------------------------- */
+.hidden-area {
 
-.back-button {
+  display: none;
+
+  margin-top: 20px;
+}
+
+
+.continue-area {
+
+  display: none;
+
+  margin-top: 30px;
+}
+
+
+.visible-area {
+
   display: block;
-
-  margin:
-    0 0 25px 0;
-
-  border:
-    1px solid
-    rgba(232, 195, 112, 0.45);
-
-  border-radius: 50px;
-
-  padding: 10px 18px;
-
-  color: #e8ca83;
-
-  background:
-    rgba(255, 255, 255, 0.05);
-
-  font-weight: bold;
-
-  cursor: pointer;
-
-  transition:
-    background 0.25s ease,
-    transform 0.25s ease;
-}
-
-.back-button:hover {
-  background:
-    rgba(232, 195, 112, 0.12);
-
-  transform:
-    translateX(-3px);
 }
 
 
-/* ------------------------------
-   Continue Button
------------------------------- */
+/* =====================================
+   RESTAURANT / ACTIVITY / GIFT CARDS
+===================================== */
 
-.continue-button {
-  width: min(480px, 100%);
+.option-grid {
 
-  padding: 17px 28px;
-
-  border: none;
-
-  border-radius: 50px;
-
-  font-size: 1rem;
-
-  font-weight: bold;
-
-  color: #09111f;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f4d889,
-      #ffffff,
-      #dbb25c
-    );
-
-  cursor: pointer;
-
-  box-shadow:
-    0 8px 25px
-    rgba(224, 182, 89, 0.25);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.continue-button:hover {
-  transform:
-    translateY(-4px)
-    scale(1.02);
-
-  box-shadow:
-    0 12px 35px
-    rgba(224, 182, 89, 0.40);
-}
-
-
-/* ------------------------------
-   Saved Selection
------------------------------- */
-
-.saved-choice {
-  color: #e8ca83;
-
-  font-weight: bold;
-
-  margin-bottom: 18px;
-
-  line-height: 1.6;
-}
-
-
-/* ------------------------------
-   Animations
------------------------------- */
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-
-    transform:
-      translateY(35px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateY(0);
-  }
-}
-
-@keyframes floatAround {
-  0%,
-  100% {
-    transform:
-      translateY(0px)
-      rotate(0deg);
-  }
-
-  50% {
-    transform:
-      translateY(-25px)
-      rotate(10deg);
-  }
-}
-
-
-/* ------------------------------
-   Phone Sizing
------------------------------- */
-
-@media (max-width: 600px) {
-
-  .welcome-screen {
-    padding:
-      30px 15px;
-  }
-
-  .birthday-card {
-    padding:
-      40px 22px;
-  }
-
-  .small-text {
-    letter-spacing: 2px;
-  }
-
-  .message {
-    font-size: 0.95rem;
-  }
-
-  #startButton {
-    width: 100%;
-  }
-
-  .back-button {
-    margin-bottom: 20px;
-  }
-}
-
-/* ------------------------------
-   Restaurant Selection
------------------------------- */
-
-.restaurant-card {
-  width: min(850px, 96%);
-}
-
-.restaurant-grid {
   display: grid;
 
   grid-template-columns:
@@ -571,24 +475,26 @@ h2 {
 
   gap: 16px;
 
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
-.restaurant-option {
-  min-height: 110px;
+
+.option-card {
+
+  min-height: 105px;
 
   padding: 20px;
 
   border:
     1px solid
-    rgba(232, 195, 112, 0.45);
+    rgba(232,195,112,0.45);
 
   border-radius: 22px;
 
   background:
-    rgba(255, 255, 255, 0.05);
+    rgba(255,255,255,0.05);
 
-  color: #ffffff;
+  color: white;
 
   cursor: pointer;
 
@@ -596,47 +502,49 @@ h2 {
 
   box-shadow:
     0 8px 24px
-    rgba(0, 0, 0, 0.18);
+    rgba(0,0,0,0.18);
 
   transition:
     transform 0.25s ease,
-    border 0.25s ease,
     background 0.25s ease,
     box-shadow 0.25s ease;
 }
 
-.restaurant-option:hover {
+
+.option-card:hover {
+
   transform:
     translateY(-4px);
 
   background:
-    rgba(232, 195, 112, 0.10);
-
-  box-shadow:
-    0 12px 30px
-    rgba(224, 182, 89, 0.15);
+    rgba(232,195,112,0.10);
 }
 
-.restaurant-option.selected {
+
+.option-card.selected {
+
   border:
     3px solid #fff1b8;
 
   background:
     linear-gradient(
       135deg,
-      rgba(244, 216, 137, 0.20),
-      rgba(255, 255, 255, 0.08),
-      rgba(219, 178, 92, 0.18)
+      rgba(244,216,137,0.20),
+      rgba(255,255,255,0.08),
+      rgba(219,178,92,0.18)
     );
 
   box-shadow:
     0 0 0 3px
-    rgba(232, 195, 112, 0.22),
+    rgba(232,195,112,0.22),
+
     0 12px 35px
-    rgba(224, 182, 89, 0.25);
+    rgba(224,182,89,0.25);
 }
 
-.restaurant-name {
+
+.option-name {
+
   display: block;
 
   color: #f7e6ad;
@@ -648,36 +556,314 @@ h2 {
   margin-bottom: 8px;
 }
 
-.restaurant-type {
+
+.option-type {
+
   display: block;
 
   color: #d8d8df;
 
-  font-size: 0.9rem;
+  font-size: 0.90rem;
 
   line-height: 1.4;
 }
 
-.surprise-restaurant {
-  grid-column:
-    1 / -1;
 
-  text-align: center;
+.activity-section {
+
+  margin-top: 30px;
 }
 
 
-/* ------------------------------
-   Restaurant Mobile Layout
------------------------------- */
+/* =====================================
+   TEXT AREA
+===================================== */
+
+.input-label {
+
+  display: block;
+
+  margin:
+    35px auto 12px;
+
+  color: #f4d889;
+
+  font-weight: bold;
+}
+
+
+.text-input {
+
+  display: block;
+
+  width: 100%;
+
+  padding: 18px;
+
+  border-radius: 18px;
+
+  border:
+    1px solid
+    rgba(232,195,112,0.50);
+
+  background:
+    rgba(255,255,255,0.95);
+
+  color: #09111f;
+
+  font-family: inherit;
+
+  font-size: 1rem;
+
+  resize: vertical;
+}
+
+
+/* =====================================
+   REVIEW SCREEN
+===================================== */
+
+.review-box {
+
+  margin:
+    30px 0;
+
+  padding: 25px;
+
+  border:
+    1px solid
+    rgba(232,195,112,0.40);
+
+  border-radius: 22px;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  text-align: left;
+}
+
+
+.review-row {
+
+  padding:
+    15px 0;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,0.08);
+}
+
+
+.review-row:last-child {
+
+  border-bottom: none;
+}
+
+
+.review-label {
+
+  display: block;
+
+  color: #e8ca83;
+
+  font-weight: bold;
+
+  margin-bottom: 6px;
+}
+
+
+.review-value {
+
+  color: #eeeeF3;
+
+  line-height: 1.5;
+}
+
+
+.final-actions {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+
+  align-items: center;
+}
+
+
+.submission-note {
+
+  margin-top: 25px;
+
+  color: #bcbcc7;
+
+  font-size: 0.85rem;
+
+  line-height: 1.6;
+}
+
+
+.love-note {
+
+  margin:
+    30px auto;
+
+  max-width: 600px;
+
+  color: #f4d5dc;
+
+  font-size: 1.15rem;
+
+  font-weight: bold;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================
+   CONFETTI
+===================================== */
+
+.confetti-piece {
+
+  position: fixed;
+
+  top: -60px;
+
+  z-index: 1000;
+
+  font-size: 28px;
+
+  pointer-events: none;
+
+  animation:
+    confettiFall
+    linear
+    forwards;
+}
+
+
+@keyframes confettiFall {
+
+  0% {
+
+    transform:
+      translateY(-10vh)
+      rotate(0deg);
+
+    opacity: 1;
+  }
+
+  100% {
+
+    transform:
+      translateY(115vh)
+      rotate(720deg);
+
+    opacity: 0;
+  }
+}
+
+
+/* =====================================
+   OTHER ANIMATIONS
+===================================== */
+
+@keyframes fadeUp {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(35px);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+@keyframes floatAround {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+
+    transform:
+      translateY(-25px)
+      rotate(10deg);
+  }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
 
 @media (max-width: 700px) {
 
-  .restaurant-grid {
-    grid-template-columns: 1fr;
+  .welcome-screen {
+
+    padding:
+      25px 12px;
   }
 
-  .surprise-restaurant {
-    grid-column: auto;
+
+  .birthday-card {
+
+    padding:
+      40px 22px;
+  }
+
+
+  .wide-card {
+
+    width: 100%;
+  }
+
+
+  .option-grid {
+
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .small-text {
+
+    letter-spacing: 2px;
+  }
+
+
+  h1 {
+
+    font-size:
+      clamp(2rem, 10vw, 3rem);
+  }
+
+
+  .message {
+
+    font-size: 0.95rem;
+  }
+
+
+  #startButton {
+
+    width: 100%;
   }
 
 }
