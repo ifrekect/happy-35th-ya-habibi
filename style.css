@@ -224,3 +224,50 @@ h2 {
     width: 100%;
   }
 }
+
+/* ------------------------------
+   Birthday Choice Buttons
+------------------------------ */
+
+.choice-button {
+  display: block;
+  width: min(480px, 100%);
+  margin: 16px auto;
+
+  border: 1px solid rgba(232, 195, 112, 0.55);
+  border-radius: 50px;
+
+  padding: 17px 28px;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  color: #09111f;
+
+  background: linear-gradient(
+    135deg,
+    #f4d889,
+    #ffffff,
+    #dbb25c
+  );
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(224, 182, 89, 0.20);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.choice-button:hover {
+  transform: translateY(-4px) scale(1.02);
+
+  box-shadow:
+    0 12px 35px rgba(224, 182, 89, 0.40);
+}
+
+.choice-button:active {
+  transform: scale(0.98);
+}
